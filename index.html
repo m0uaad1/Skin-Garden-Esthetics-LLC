@@ -1,67 +1,224 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CAP Garland, LLC</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f0f0f0;
-      color: #333;
-    }
-    header {
-      background-color: #003366;
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
-    }
-    section {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    h1, h2 {
-      color: #003366;
-    }
-    .contact {
-      background: #fff;
-      padding: 20px;
-      border-left: 5px solid #003366;
-      margin-top: 30px;
-    }
-    footer {
-      background-color: #003366;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 50px;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Skin Garden Esthetics LLC — Eureka, CA</title>
+<meta name="description" content="Skin Garden Esthetics LLC • Daily skincare routine tips and esthetics info. Based on Christopher Dr, Eureka, CA 95503.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pink:#ec4899;   /* primary accent (pink) */
+    --rose:#fce7f3;   /* light pink bg */
+    --brown:#7c3f22;  /* warm brown */
+    --cocoa:#5a2d16;  /* deeper brown */
+    --ink:#1f2937;    /* text */
+    --paper:#fffafc;  /* page */
+    --white:#ffffff;  /* cards */
+    --line:#f1d7e6;   /* borders */
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:Inter,system-ui,Arial,Helvetica,sans-serif;background:var(--paper);color:var(--ink)}
+  a{color:var(--pink);text-decoration:none}
+
+  header{background:linear-gradient(120deg,#7c3f22,#5a2d16);color:#fff;text-align:center;padding:34px 16px;border-bottom:6px solid var(--pink)}
+  header h1{margin:0;font-size:2.2rem;letter-spacing:.3px}
+  header p{margin:8px 0 0;opacity:.95}
+
+  nav{background:#4a2412;text-align:center;padding:12px;position:sticky;top:0;z-index:10}
+  nav a{color:#fff;margin:0 14px;font-weight:800}
+  nav a:hover{color:var(--pink)}
+
+  .hero{max-width:1100px;margin:24px auto;display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center;padding:0 14px}
+  .hero img{width:100%;border-radius:14px;border:4px solid var(--pink);object-fit:cover;animation:pulse 3s ease-in-out infinite}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(236,72,153,0)}50%{box-shadow:0 0 0 16px rgba(236,72,153,.15)}}
+  .hero .text{background:var(--white);border:1px solid var(--line);border-left:6px solid var(--brown);border-radius:14px;padding:18px}
+  .tag{display:inline-block;background:var(--rose);border:1px solid var(--line);color:var(--cocoa);border-radius:999px;padding:6px 12px;margin:6px 6px 0 0;font-size:.9rem}
+
+  .section{max-width:1100px;margin:22px auto;background:var(--white);padding:22px;border-radius:12px;border:1px solid var(--line);box-shadow:0 6px 18px rgba(0,0,0,.04)}
+  .section h2{margin:0 0 12px;color:var(--cocoa)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+
+  .card{background:#fff;border:1px solid var(--line);border-left:6px solid var(--pink);border-radius:10px;padding:12px}
+  .card h3{margin:6px 0 8px;color:#3b1d0f}
+  .tip{background:#fff7fb;border:1px dashed #f2c9df;border-radius:10px;padding:12px}
+  .disclaimer{background:#fff7f0;border:1px dashed #fcd9bd;border-left:6px solid #f59e0b;border-radius:10px;padding:12px;color:#7c2d12}
+
+  .steps{list-style:none;padding-left:0;margin:0}
+  .steps li{display:flex;gap:10px;margin:8px 0}
+  .steps .num{flex:0 0 28px;height:28px;border-radius:50%;display:inline-grid;place-items:center;background:var(--pink);color:#fff;font-weight:800}
+
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:14px}
+  .gallery img{width:100%;border-radius:10px;border:2px solid var(--pink);object-fit:cover;aspect-ratio:4/3;transition:.25s}
+  .gallery img:hover{transform:scale(1.03)}
+
+  .cta{margin-top:12px;display:flex;gap:12px;flex-wrap:wrap}
+  .btn{background:var(--pink);color:#fff;padding:12px 16px;border-radius:10px;font-weight:800}
+  .btn.secondary{background:#fff;color:var(--ink);border:2px solid var(--ink)}
+
+  footer{background:#4a2412;color:#fff;text-align:center;padding:18px;margin-top:26px;border-top:6px solid var(--pink)}
+
+  /* Floating buttons */
+  .bar{position:fixed;left:0;right:0;bottom:0;background:#ffffffd9;backdrop-filter:blur(6px);display:flex;gap:10px;justify-content:center;padding:10px;border-top:2px solid var(--pink);z-index:999}
+  .bar a{background:#4a2412;color:#fff;padding:10px 14px;border-radius:999px;font-weight:800}
+  .bar a:nth-child(2){background:var(--pink)}
+  @media(min-width:820px){.bar{display:none}}
+  @media(max-width:900px){.hero{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
-  <header>
-    <h1>CAP Garland, LLC</h1>
-    <p>Private Investment Fund</p>
-  </header>
 
-  <section>
-    <h2>About Us</h2>
-    <p>CAP Garland, LLC is a Washington-based private investment fund focused on delivering value through diversified investment strategies.</p>
+<header>
+  <h1>Skin Garden Esthetics LLC</h1>
+  <p>Daily Routine Infos • Christopher Dr, Eureka, CA 95503, United States</p>
+</header>
 
-    <h2>Contact</h2>
-    <div class="contact">
-      <p><strong>Address:</strong> 915 W 2nd Ave, Spokane, WA 99201</p>
-      <p><strong>Email:</strong> <a href="mailto:ryanberg@capgarland.shop">ryanberg@capgarland.shop</a></p>
-      <p><strong>Phone:</strong> (509) 822-3850</p>
+<nav>
+  <a href="#about">About</a>
+  <a href="#routine">Daily Routine</a>
+  <a href="#tips">Skin Tips</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="https://i.pinimg.com/originals/b1/78/e7/b178e7bb28d9dd17aa0ed5a470ee1460.jpg" alt="Calming esthetics setup with pink tones">
+  <div class="text">
+    <h2>Glow gently. Care consistently.</h2>
+    <p>Simple, evidence‑minded skincare routines for everyday radiance. Build habits that your skin will love.</p>
+    <div>
+      <span class="tag">🌸 Gentle Care</span>
+      <span class="tag">🧴 Routine Builder</span>
+      <span class="tag">☀️ SPF First</span>
     </div>
-  </section>
+    <div class="cta">
+      <a class="btn" href="tel:+18459935146">Call: +1 (845) 993‑5146</a>
+      <a class="btn secondary" href="mailto:admin@benrivan.shop">Email: admin@benrivan.shop</a>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    &copy; 2025 CAP Garland, LLC. All rights reserved.
-  </footer>
+<!-- ABOUT -->
+<section id="about" class="section">
+  <h2>About Us</h2>
+  <p><strong>Skin Garden Esthetics LLC</strong> shares friendly, practical daily‑routine guidance for healthy skin. Whether you’re new to skincare or refining your regimen, we focus on approachable steps and consistency.</p>
+  <p><strong>Address:</strong> Christopher Dr, Eureka, CA 95503, United States • <strong>Email:</strong> <a href="mailto:admin@benrivan.shop">admin@benrivan.shop</a> • <strong>Phone:</strong> <a href="tel:+18459935146">+1 (845) 993‑5146</a></p>
+</section>
+
+<!-- DAILY ROUTINE -->
+<section id="routine" class="section">
+  <h2>Daily Routine (AM & PM)</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Morning (AM)</h3>
+      <ol class="steps">
+        <li><span class="num">1</span> <b>Cleanse</b> — Gentle cleanser; avoid over‑stripping.</li>
+        <li><span class="num">2</span> <b>Treat</b> — Vitamin C or antioxidant serum.</li>
+        <li><span class="num">3</span> <b>Moisturize</b> — Light, non‑comedogenic lotion.</li>
+        <li><span class="num">4</span> <b>Protect</b> — Broad‑spectrum SPF 30+ (every day).</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>Evening (PM)</h3>
+      <ol class="steps">
+        <li><span class="num">1</span> <b>Remove</b> — Makeup remover or oil cleanse if needed.</li>
+        <li><span class="num">2</span> <b>Cleanse</b> — Mild cleanser.</li>
+        <li><span class="num">3</span> <b>Treat</b> — Retinoid or exfoliant (2–3×/week).</li>
+        <li><span class="num">4</span> <b>Hydrate</b> — Nourishing moisturizer; add occlusive if dry.</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>Weekly Add‑Ons</h3>
+      <ul>
+        <li>Exfoliation: 1–2×/week (chemical preferred; patch test).</li>
+        <li>Mask: calming or hydrating based on skin’s mood.</li>
+        <li>Spot care: benzoyl peroxide or salicylic acid as needed.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="tip" role="note">💡 <b>Tip:</b> Introduce one new product at a time and track skin reactions for at least 2 weeks.</div>
+</section>
+
+<!-- SKIN TIPS -->
+<section id="tips" class="section">
+  <h2>Skin Tips by Skin Type</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Dry</h3>
+      <ul>
+        <li>Use creamy cleanser; avoid foaming sulfates.</li>
+        <li>Layer humectant + emollient (hyaluronic + ceramides).</li>
+        <li>Seal with a light occlusive at night.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Oily / Acne‑Prone</h3>
+      <ul>
+        <li>Gentle, low‑pH cleanser.</li>
+        <li>Niacinamide (2–5%) to regulate sebum.</li>
+        <li>SPF in gel or fluid textures.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Sensitive</h3>
+      <ul>
+        <li>Fragrance‑free basics; patch test everything.</li>
+        <li>Avoid harsh scrubs; prefer PHA/lactobionic acids.</li>
+        <li>Look for soothing ingredients (centella, oat).</li>
+      </ul>
+    </div>
+  </div>
+  <div class="disclaimer">⚠️ <strong>Not medical advice.</strong> For diagnoses, allergies, or persistent concerns, consult a licensed dermatologist or healthcare provider.</div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="section">
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <img src="https://i.pinimg.com/736x/56/00/bb/5600bbe119e6a8254f884d7697433944.jpg" alt="Pink skincare flatlay">
+    <img src="https://cathe.com/wp-content/uploads/2013/04/shutterstock_79898110.jpg" alt="Woman applying sunscreen">
+    <img src="https://i.pinimg.com/originals/c8/bb/f2/c8bbf22d8361f6f2b739890f78eca685.jpg" alt="Serum bottles on tray">
+    <img src="https://i.pinimg.com/originals/b1/78/e7/b178e7bb28d9dd17aa0ed5a470ee1460.jpg" alt="Spa ambience with towels">
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <h2>Contact</h2>
+  <div class="grid">
+    <div>
+      <p>📧 <strong>Email:</strong> <a href="mailto:admin@benrivan.shop">admin@benrivan.shop</a></p>
+      <p>📞 <strong>Phone:</strong> <a href="tel:+18459935146">+1 (845) 993‑5146</a></p>
+      <p>📍 <strong>Address:</strong> Christopher Dr, Eureka, CA 95503, United States</p>
+    </div>
+    <div>
+      <p><em>Hours</em></p>
+      <ul>
+        <li>Mon–Fri: 9:00 – 17:00</li>
+        <li>Sat–Sun: Closed</li>
+      </ul>
+    </div>
+  </div>
+  <div class="cta">
+    <a class="btn" href="#routine">Start Your Routine</a>
+    <a class="btn secondary" href="#tips">Skin Tips</a>
+  </div>
+</section>
+
+<!-- MOBILE BAR -->
+<div class="bar">
+  <a href="tel:+18459935146">Call</a>
+  <a href="mailto:admin@benrivan.shop">Email</a>
+  <a href="#routine">Routine</a>
+</div>
+
+<footer>
+  <p>&copy; 2025 Skin Garden Esthetics LLC — Eureka, CA</p>
+</footer>
+
 </body>
 </html>
